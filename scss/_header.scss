@@ -1,0 +1,47 @@
+header {
+    grid-area: header;
+    min-height: 40vh;
+    display: grid;
+    place-content: center center;
+    grid-template-columns: 3% 7% 4% 6% 41% 14% 25%;
+    grid-template-rows: 13% 12% 42% 23% 10%;
+}
+.logo {
+    grid-area: 1 / 5 / 2 / 6;
+    place-self: center end;
+    & h2 {
+        margin-right: 2rem;
+        font-family: var(--font-logo);
+       
+    }
+}
+.rec-bg-right{
+    background: linear-gradient(to right top,var(--primary),var(--secondary));
+    grid-area: 1 / 6 / 4 / 8;
+}
+.rec-bg-center {
+    background: var(--primary);
+    grid-area: 3 / 4 / 6 / 7;
+}
+.rec-bg-left {
+    background: var(--secondary);
+    grid-area: 5 / 2 / 6 / 4;
+}
+.rec-bg-white {
+    background: var(--background);
+    grid-area: 5 / 4 / 6 / 5;
+}
+.title {
+    grid-area: 3 / 3 / 4 / 7;
+    align-self: end;
+    font-family: var(--font-secondary);
+    font-size: 1.8rem;
+}
+.contact-information {
+    grid-area: 4 / 7 / 6 / 8;
+    align-self: center;
+    color: var(--text-light);
+    font-weight: 800;
+    font-size: 1rem;
+    text-align: center;
+}
