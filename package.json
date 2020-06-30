@@ -1,0 +1,26 @@
+{
+  "name": "curriculum-vitae",
+  "version": "1.0.0",
+  "description": "My curriculum vitae",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Magali-Rezeau/Curriculum-Vitae.git"
+  },
+  "keywords": [
+    "curriculum-vitae",
+    "Magali-Rézeau"
+  ],
+  "author": "Magali Rézeau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Magali-Rezeau/Curriculum-Vitae/issues"
+  },
+  "homepage": "https://github.com/Magali-Rezeau/Curriculum-Vitae#readme",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
