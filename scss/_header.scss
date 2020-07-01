@@ -1,10 +1,14 @@
 header {
     grid-area: header;
-    min-height: 100vh;
+    height: 100vh;
     display: grid;
     place-content: center center;
     grid-template-columns: 3% 7% 4% 6% 41% 14% 25%;
     grid-template-rows: 13% 12% 42% 23% 10%;
+
+    @include mobile {
+        height: 80vh;
+    }
 }
 
 .logo {
@@ -79,6 +83,10 @@ header {
     font-family: var(--font-secondary);
     font-size: 1.8rem;
 
+    @include large {
+        font-size: 3rem;
+    }
+
     @include tablet-small {
         font-size: 1.2rem;
     }
@@ -91,6 +99,10 @@ header {
     font-weight: 400;
     font-size: 1.5rem;
     text-align: center;
+
+    @include large {
+        font-size: 2rem;
+    }
 
     @include medium {
         font-size: 1.2rem;

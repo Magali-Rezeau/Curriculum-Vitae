@@ -7,6 +7,10 @@ aside {
     background: radial-gradient(circle, var(--background), var(--secondary));
     padding: 8rem 0;
 
+    @include large {
+        padding: 8rem 2rem;
+    }
+
     @include medium {
         grid-template-columns: 20% 25% 20% 25%;
         grid-template-rows: 1fr;
@@ -47,6 +51,10 @@ aside {
             text-align: center;
             margin: 1.5rem 0;
             font-size: 2rem;
+
+            @include large {
+                font-size: 3rem;
+            }
 
             @include mobile {
                 font-size: 1.5rem;
@@ -140,21 +148,13 @@ aside {
                 flex-direction: row;
             }
 
-            @include tablet-small {
-                flex-direction: column;
-            }
-
             & li {
                 width: 80%;
                 margin: 0.5rem auto;
                 padding: 0;
 
                 @include tablet-small {
-                    width: 25%;
-                }
-
-                @include mobile {
-                    width: 60%;
+                    width: auto;
                 }
 
                 & i {
@@ -162,6 +162,11 @@ aside {
                     font-size: 2rem;
                     margin-right: .5rem;
                     color: var(--text-light);
+
+                    @include large {
+                        font-size: 2.5rem;
+                        margin-right: 2rem;
+                    }
 
                     @include tablet-small {
                         font-size: 1.5rem;
