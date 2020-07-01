@@ -4,7 +4,7 @@
   --secondary: #b4d3d3;
   --tertiary: #d3dcdc;
   --text: #3c3c3f;
-  --text-light: #c6c6c8;
+  --text-light: #77777e;
   --font-primary: 'Nunito', sans-serif;
   --font-secondary: 'Poppins', sans-serif;
   --font-logo: 'Playfair Display SC', serif; }
@@ -81,13 +81,57 @@ header {
   grid-area: 4 / 7 / 6 / 8;
   align-self: center;
   color: var(--text-light);
-  font-weight: 800;
+  font-weight: 400;
   font-size: 1rem;
   text-align: center; }
 
 aside {
-  grid-area: aside; }
+  grid-area: aside;
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr;
+  grid-gap: 3rem;
+  background: radial-gradient(circle, var(--background), var(--secondary));
+  padding: 8rem 0; }
+  aside .skills h2,
+  aside .qualities h2,
+  aside .hobbies h2 {
+    font-family: var(--font-secondary);
+    text-align: center;
+    margin: 1.5rem 0;
+    font-size: 2rem; }
+  aside .skills-list,
+  aside .qualities-list,
+  aside .hobbies-list {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    padding: 0 .3rem; }
+  aside .skills-list li {
+    width: 7rem; }
+    aside .skills-list li:nth-child(1), aside .skills-list li:nth-child(3), aside .skills-list li:nth-child(5), aside .skills-list li:nth-child(7), aside .skills-list li:nth-child(9) {
+      color: var(--secondary); }
+    aside .skills-list li:nth-child(2), aside .skills-list li:nth-child(4), aside .skills-list li:nth-child(6), aside .skills-list li:nth-child(8), aside .skills-list li:nth-child(10) {
+      color: var(--text); }
+    aside .skills-list li i {
+      font-size: 5rem;
+      margin: 1rem; }
+  aside .qualities-list {
+    flex-direction: column; }
+  aside .hobbies-list {
+    flex-direction: column; }
+    aside .hobbies-list li {
+      width: 80%;
+      margin: 0.5rem auto;
+      padding: 0 auto;
+      display: block; }
+      aside .hobbies-list li i {
+        width: 15%;
+        font-size: 2rem;
+        margin-right: .5rem;
+        color: var(--text-light); }
 
 main {
-  grid-area: main;
-  background: blue; }
+  grid-area: main; }

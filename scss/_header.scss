@@ -12,7 +12,6 @@ header {
     & h2 {
         margin-right: 2rem;
         font-family: var(--font-logo);
-       
     }
 }
 .rec-bg-right{
@@ -41,7 +40,7 @@ header {
     grid-area: 4 / 7 / 6 / 8;
     align-self: center;
     color: var(--text-light);
-    font-weight: 800;
+    font-weight: 400;
     font-size: 1rem;
     text-align: center;
 }
