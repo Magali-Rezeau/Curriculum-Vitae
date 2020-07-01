@@ -25,6 +25,14 @@ body {
 p {
   margin: 1rem 0; }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-secondary); }
+
 ul {
   list-style: none; }
 
@@ -42,7 +50,7 @@ img {
 
 header {
   grid-area: header;
-  min-height: 40vh;
+  min-height: 60vh;
   display: grid;
   place-content: center center;
   grid-template-columns: 3% 7% 4% 6% 41% 14% 25%;
@@ -54,6 +62,22 @@ header {
   .logo h2 {
     margin-right: 2rem;
     font-family: var(--font-logo); }
+    .logo h2 span {
+      display: inline-block;
+      animation: bounceInDown 1.5s; }
+
+.social-link {
+  grid-area: 2 / 2 / 4 / 4; }
+  .social-link ul li {
+    color: var(--text-light);
+    font-size: 1rem; }
+    .social-link ul li i {
+      font-size: 3rem;
+      color: var(--secondary);
+      margin: 0 1rem .6rem 0;
+      cursor: pointer; }
+      .social-link ul li i:hover {
+        color: var(--primary); }
 
 .rec-bg-right {
   background: linear-gradient(to right top, var(--primary), var(--secondary));
@@ -82,16 +106,23 @@ header {
   align-self: center;
   color: var(--text-light);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.5rem;
   text-align: center; }
 
 aside {
   grid-area: aside;
   display: grid;
-  grid-template-rows: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr 1fr;
   grid-gap: 3rem;
   background: radial-gradient(circle, var(--background), var(--secondary));
   padding: 8rem 0; }
+  aside .profil p,
+  aside .skills p,
+  aside .qualities p,
+  aside .hobbies p {
+    color: var(--text-light);
+    text-align: center; }
+  aside .profil h2,
   aside .skills h2,
   aside .qualities h2,
   aside .hobbies h2 {
@@ -99,6 +130,7 @@ aside {
     text-align: center;
     margin: 1.5rem 0;
     font-size: 2rem; }
+  aside .profil-list,
   aside .skills-list,
   aside .qualities-list,
   aside .hobbies-list {
@@ -108,7 +140,7 @@ aside {
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-content: center;
-    padding: 0 .3rem; }
+    padding: 0 .6rem; }
   aside .skills-list li {
     width: 7rem; }
     aside .skills-list li:nth-child(1), aside .skills-list li:nth-child(3), aside .skills-list li:nth-child(5), aside .skills-list li:nth-child(7), aside .skills-list li:nth-child(9) {
@@ -117,7 +149,7 @@ aside {
       color: var(--text); }
     aside .skills-list li i {
       font-size: 5rem;
-      margin: 1rem; }
+      margin: 2rem; }
   aside .qualities-list {
     flex-direction: column; }
   aside .hobbies-list {
@@ -125,7 +157,7 @@ aside {
     aside .hobbies-list li {
       width: 80%;
       margin: 0.5rem auto;
-      padding: 0 auto;
+      padding: 0;
       display: block; }
       aside .hobbies-list li i {
         width: 15%;
@@ -134,4 +166,57 @@ aside {
         color: var(--text-light); }
 
 main {
-  grid-area: main; }
+  grid-area: main;
+  padding: 5rem; }
+  main h2 {
+    margin: 2rem 0; }
+  main p {
+    margin: 0; }
+  main .education-block, main .experience-block {
+    display: flex;
+    align-content: center;
+    margin-bottom: 5rem; }
+    main .education-block-timeline, main .experience-block-timeline {
+      width: 10%;
+      text-align: center;
+      color: var(--text-light);
+      padding-right: 1rem;
+      border-right: 1px solid var(--secondary);
+      font-weight: 400;
+      font-size: 1.2rem; }
+    main .education-block-content, main .experience-block-content {
+      padding: 0 2rem; }
+      main .education-block-content-list, main .experience-block-content-list {
+        margin-left: 3rem;
+        list-style-type: square;
+        color: var(--text-light); }
+
+@keyframes bounce {
+  0% {
+    transform: rotate(-45deg); }
+  10% {
+    transform: rotate(-45deg); }
+  70% {
+    transform: rotate(-35deg); }
+  80% {
+    transform: rotate(20deg); }
+  90% {
+    transform: rotate(5deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+@keyframes bounceInDown {
+  0%, 60%, 75%, 90%, 100% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0); }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0); }
+  75% {
+    transform: translate3d(0, -10px, 0); }
+  90% {
+    transform: translate3d(0, 5px, 0); }
+  100% {
+    transform: none; } }
