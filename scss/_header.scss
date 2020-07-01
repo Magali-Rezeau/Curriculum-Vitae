@@ -7,7 +7,7 @@ header {
     grid-template-rows: 13% 12% 42% 23% 10%;
 
     @include mobile {
-        height: 80vh;
+        height: 95vh;
     }
 }
 
@@ -81,10 +81,18 @@ header {
     grid-area: 3 / 3 / 4 / 7;
     align-self: end;
     font-family: var(--font-secondary);
-    font-size: 1.8rem;
+    font-size: 3rem;
 
     @include large {
         font-size: 3rem;
+    }
+
+    @include medium {
+        font-size: 2rem;
+    }
+
+    @include tablet {
+        font-size: 1.3rem;
     }
 
     @include tablet-small {
