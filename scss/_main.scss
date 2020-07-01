@@ -1,39 +1,51 @@
 main {
-    grid-area: main;  
+    grid-area: main;
     padding: 5rem;
+
     h2 {
         margin: 2rem 0;
     }
+
     p {
         margin: 0;
     }
-    .education, .experience {
+
+    .education,
+    .experience {
         &-block {
-        display: flex;
-        align-content: center;
-        margin-bottom: 5rem;
-        
-        &-timeline {
-            width: 10%;
-            text-align: center;
-            color: var(--text-light);
-            padding-right: 1rem;;
-            border-right: 1px solid var(--secondary);
-            font-weight: 400;
-            font-size: 1.2rem;
-        }
-        &-content {
-            padding: 0 2rem;
-               
-            &-list {
-                margin-left: 3rem;
-                list-style-type: square;
-                color: var(--text-light);
+            display: flex;
+            align-content: center;
+            margin-bottom: 5rem;
+
+            @include mobile {
+                margin-bottom: 2rem;
             }
-            
+
+            &-timeline {
+                width: 10%;
+                text-align: center;
+                color: var(--text-light);
+                padding-right: 1rem;
+                ;
+                border-right: 1px solid var(--secondary);
+                font-weight: 400;
+                font-size: 1.2rem;
+
+                @include mobile {
+                    font-size: .8rem;
+                }
+            }
+
+            &-content {
+                padding: 0 2rem;
+
+                &-list {
+                    margin-left: 3rem;
+                    list-style-type: square;
+                    color: var(--text-light);
+                }
+
+            }
         }
     }
-}
-
-
 }

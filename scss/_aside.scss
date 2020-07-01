@@ -2,24 +2,58 @@ aside {
     grid-area: aside;
     display: grid;
     grid-template-rows: 1fr 2fr 1fr 1fr;
-    grid-gap: 3rem ;
+    grid-gap: 3rem;
+    place-content: space-evenly;
     background: radial-gradient(circle, var(--background), var(--secondary));
     padding: 8rem 0;
+
+    @include medium {
+        grid-template-columns: 20% 25% 20% 25%;
+        grid-template-rows: 1fr;
+        grid-gap: 2rem;
+        padding: 5rem 2rem 4rem 2rem;
+    }
+
+    @include tablet {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto 1fr;
+        padding: 1rem 4rem;
+    }
+
+    @include tablet-small {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr .5fr .5fr;
+        padding: 1rem 2rem 4rem 2rem;
+    }
+
+    @include mobile {
+        min-height: 50vh;
+        grid-template-rows: .5fr 1fr .5fr .5fr;
+    }
 
     .profil,
     .skills,
     .qualities,
     .hobbies {
+
         & p {
             color: var(--text-light);
             text-align: center;
+            padding: 1rem;
         }
+
         & h2 {
             font-family: var(--font-secondary);
             text-align: center;
             margin: 1.5rem 0;
             font-size: 2rem;
+
+            @include mobile {
+                font-size: 1.5rem;
+                margin: .5rem 0;
+            }
         }
+
         &-list {
             width: 100%;
             height: auto;
@@ -28,20 +62,39 @@ aside {
             justify-content: space-evenly;
             align-content: center;
             padding: 0 .6rem;
+
+            & li i {
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .profil {
+        @include tablet {
+            grid-area: 1 / 1 / 2 / 4;
+        }
+
+        @include tablet-small {
+            grid-area: 1 / 1 / 2 / 2;
         }
     }
 
     .skills {
         &-list {
             & li {
-                width: 7rem;
+
                 &:nth-child(1),
                 &:nth-child(3),
                 &:nth-child(5),
                 &:nth-child(7),
                 &:nth-child(9) {
                     color: var(--secondary);
+
+                    @include tablet {
+                        color: var(--text-light);
+                    }
                 }
+
                 &:nth-child(2),
                 &:nth-child(4),
                 &:nth-child(6),
@@ -49,34 +102,73 @@ aside {
                 &:nth-child(10) {
                     color: var(--text);
                 }
+
                 & i {
                     font-size: 5rem;
-                    margin: 2rem;
+                    padding: 2rem;
+
+                    @include medium {
+                        font-size: 3rem;
+                        padding: 1rem;
+                    }
+
+                    @include tablet-small {
+                        font-size: 2rem;
+                        padding: 1rem;
+                    }
                 }
             }
         }
     }
+
     .qualities {
         &-list {
             flex-direction: column;
+
+            @include tablet-small {
+                flex-direction: row;
+            }
+
         }
     }
+
     .hobbies {
         &-list {
             flex-direction: column;
+
+            @include tablet-small {
+                flex-direction: row;
+            }
+
+            @include tablet-small {
+                flex-direction: column;
+            }
+
             & li {
                 width: 80%;
                 margin: 0.5rem auto;
                 padding: 0;
-                display: block;
+
+                @include tablet-small {
+                    width: 25%;
+                }
+
+                @include mobile {
+                    width: 60%;
+                }
+
                 & i {
-                    width: 15%;
+                    width: auto;
                     font-size: 2rem;
                     margin-right: .5rem;
                     color: var(--text-light);
+
+                    @include tablet-small {
+                        font-size: 1.5rem;
+                    }
                 }
 
-           }   
+            }
         }
     }
 }
